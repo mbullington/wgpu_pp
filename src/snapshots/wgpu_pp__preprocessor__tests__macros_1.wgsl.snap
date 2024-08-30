@@ -1,0 +1,8 @@
+---
+source: crates/wgpu_pp/src/preprocessor.rs
+assertion_line: 368
+expression: result.unwrap()
+---
+fn to_f32(x: f32) -> f32 {
+    return f32(x);
+}

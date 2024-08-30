@@ -1,0 +1,8 @@
+---
+source: crates/wgpu_pp/src/preprocessor.rs
+assertion_line: 370
+expression: result.unwrap()
+---
+fn to_grey(x: f32) -> vec4f {
+    return vec4f(vec3f(f32(x), f32(x), f32(x)), 1.0f);
+}

@@ -1,0 +1,13 @@
+---
+source: crates/wgpu_pp/src/preprocessor.rs
+assertion_line: 255
+expression: result.unwrap()
+---
+fn import_2(x: f32) -> f32 {
+    return 0.0;
+}
+
+
+fn import_1(x: f32) -> f32 {
+    return 0.0;
+}

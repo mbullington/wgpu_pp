@@ -1,0 +1,13 @@
+---
+source: crates/wgpu_pp/src/preprocessor.rs
+assertion_line: 255
+expression: result.unwrap()
+---
+fn times_pi(x: f32) -> f32 {
+    return x * f32(3.14159);
+}
+
+
+fn times_PI_bad(x: f32) -> f32 {
+    return 0.0;
+}
