@@ -85,8 +85,6 @@ fn _substitute_macros(
             match defines.get(id) {
                 Some(DefineDirective::Value(value)) => {
                     result.replace_range(id_start..id_end, value);
-
-                    i += id_len;
                 }
                 Some(DefineDirective::Macro(args, body)) => {
                     // Make sure the directly next token is a parenthesis.
@@ -163,12 +161,11 @@ fn _substitute_macros(
                     let (_changed, new_body) = _substitute_macros(body.to_string(), &arg_defines)?;
 
                     result.replace_range(id_start..paren_idx + 1, &new_body);
-                    i += id_len;
                 }
-                _ => {
-                    i += id_len;
-                }
+                _ => {}
             }
+
+            i += id_len;
         } else {
             break;
         }
