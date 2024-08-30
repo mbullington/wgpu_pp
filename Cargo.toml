@@ -2,6 +2,8 @@
 name = "wgpu-pp"
 version = "1.0.0"
 edition = "2021"
+description = "Simple, C-style preprocessor for WGSL using proc macros."
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
