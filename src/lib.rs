@@ -40,7 +40,13 @@ pub fn include_wgsl(input: TokenStream) -> TokenStream {
     }
 
     let call_site = Span::call_site();
-    let source_path = call_site.source_file().path();
+    let source_path = match call_site.local_file() {
+        Some(p) => p,
+        None => {
+            // This happens in the Rust Analyzer, just let it go...
+            return "\"\"".parse().unwrap();
+        }
+    };
     let basepath = match source_path.parent() {
         Some(p) => p,
         _ => {
